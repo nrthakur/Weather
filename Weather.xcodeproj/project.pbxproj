@@ -14,6 +14,8 @@
 		87A59F8A2C06F68B0091F1DD /* WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A59F892C06F68B0091F1DD /* WeatherTests.swift */; };
 		87A59F942C06F68B0091F1DD /* WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A59F932C06F68B0091F1DD /* WeatherUITests.swift */; };
 		87A59F962C06F68B0091F1DD /* WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A59F952C06F68B0091F1DD /* WeatherUITestsLaunchTests.swift */; };
+		87C4CA872C0B981500141B2C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4CA862C0B981500141B2C /* WeatherService.swift */; };
+		87C4CA892C0B9F0300141B2C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C4CA882C0B9F0300141B2C /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		87A59F8F2C06F68B0091F1DD /* WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A59F932C06F68B0091F1DD /* WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITests.swift; sourceTree = "<group>"; };
 		87A59F952C06F68B0091F1DD /* WeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		87C4CA862C0B981500141B2C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		87C4CA882C0B9F0300141B2C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				87A59F772C06F68A0091F1DD /* WeatherApp.swift */,
 				87A59F792C06F68A0091F1DD /* ContentView.swift */,
+				87C4CA862C0B981500141B2C /* WeatherService.swift */,
+				87C4CA882C0B9F0300141B2C /* Weather.swift */,
 				87A59F7B2C06F68B0091F1DD /* Assets.xcassets */,
 				87A59F7D2C06F68B0091F1DD /* Weather.entitlements */,
 				87A59F7E2C06F68B0091F1DD /* Preview Content */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C4CA892C0B9F0300141B2C /* Weather.swift in Sources */,
 				87A59F7A2C06F68A0091F1DD /* ContentView.swift in Sources */,
+				87C4CA872C0B981500141B2C /* WeatherService.swift in Sources */,
 				87A59F782C06F68A0091F1DD /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +432,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location to provide accurate weather data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -462,6 +471,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your location to provide accurate weather data";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
