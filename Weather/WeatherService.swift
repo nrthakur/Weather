@@ -13,6 +13,11 @@ public final class WeatherService: NSObject {
     private let API_KEY = "d8a18c92765cd5906da1b1d1222c6ebf"
     private var completionHandler: ((Weather) -> Void)?
     
+    public override init() {
+        super.init()
+        locationManager.delegate = self
+    }
+    
     public func loadWeatherData(_ completionHandler: @escaping((Weather) -> Void)){
         self.completionHandler = completionHandler
         locationManager.requestWhenInUseAuthorization()
@@ -34,6 +39,21 @@ public final class WeatherService: NSObject {
         }.resume()
     }
 }
+
+extension WeatherService: CLLocationManagerDelegate {
+    public func locationManager(
+        _ manager: CLLocationManager, 
+        didUpdateLocations locations: [CLLocation]
+    ) {
+        guard let location = locations.first else {return}
+        makeDataRequest(forCoordinates: location.coordinate)
+    }
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print("Something Went Wrong :( \(error.localizedDescription)")
+    }
+        
+    }
+
 
 // Imporing 3 structures that will represent the different JSON responses obtained from OpenWeatherMap API
 
