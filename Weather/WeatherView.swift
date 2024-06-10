@@ -12,17 +12,35 @@
 import SwiftUI
 
 struct WeatherView: View {
+    
     @ObservedObject var viewModel: WeatherViewModel
     
     var body: some View {
         VStack {
-            Text(viewModel.cityName).font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).padding()
-            Text(viewModel.temp).font(.system(size: 70)).bold()
-            Text(viewModel.temp).font(.largeTitle).padding()
+            Text(viewModel.cityName)
+                .font(.largeTitle)
+                .padding()
+            Text(viewModel.temp)
+                .font(.system(size: 70))
+                .bold()
+            Text(viewModel.temp)
+                .font(.largeTitle)
+                .padding()
             Text(viewModel.weatherDescription)
-        }.onAppear(perform: viewModel.refresh)
+        }
+        .alert(isPresented: $viewModel.shouldShowLocationError) {
+            Alert(
+                title: Text("Error"),
+                message: Text("To see Weather, please provide location access in Settings."),
+                dismissButton: .default(Text("Open Settings")) {
+                    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {return}
+                    UIApplication.shared.open(settingsURL)
+                    }
+                )
+            }
+            .onAppear(perform: viewModel.refresh)
+        }
     }
-}
 
 #Preview {
     WeatherView(viewModel: WeatherViewModel(weatherService: WeatherService()))
