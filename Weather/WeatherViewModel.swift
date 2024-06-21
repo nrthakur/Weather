@@ -9,12 +9,12 @@ import Foundation
 
 private let defaultIcon = "❓"
 private let iconMap = [
-    "Drizzle" : "🌧️",
-    "Thunderstorm" : "⛈️",
-    "Rain" : "🌧️",
-    "Snow" : "❄️",
-    "Clear" : "☀️",
-    "Clouds" : "☁️",
+     "Drizzle" : "🌧",
+  "Thunderstorm" : "⛈",
+  "Rain": "🌧",
+  "Snow": "❄️",
+  "Clear": "☀️",
+  "Clouds" : "☁️",
 ]
 
 public class WeatherViewModel: ObservableObject {
@@ -23,6 +23,7 @@ public class WeatherViewModel: ObservableObject {
     @Published var weatherDescription: String = "--"
     @Published var weatherIcon: String = defaultIcon
     @Published var shouldShowLocationError: Bool = false
+    @Published var test: String = "hello"
     
     public let weatherService: WeatherService
     
@@ -42,7 +43,7 @@ public class WeatherViewModel: ObservableObject {
                 self.shouldShowLocationError = false
                 guard let weather = weather else { return }
                 self.cityName = weather.city
-                self.temp = "\(weather.temp)°C"
+                self.temp = "\(weather.temp)ºC"
                 self.weatherDescription = weather.description.capitalized
                 self.weatherIcon = iconMap[weather.iconName] ?? defaultIcon
             }

@@ -23,7 +23,7 @@ struct WeatherView: View {
             Text(viewModel.temp)
                 .font(.system(size: 70))
                 .bold()
-            Text(viewModel.temp)
+            Text(viewModel.weatherIcon)
                 .font(.largeTitle)
                 .padding()
             Text(viewModel.weatherDescription)
